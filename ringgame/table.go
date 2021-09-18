@@ -2,7 +2,6 @@ package ringgame
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 
 	"github.com/fredbainbridge/pokerapimodels"
@@ -21,7 +20,6 @@ func Tables(url string, password string) ([]pokerapimodels.Table, error) {
 		log.Fatal(err)
 		return nil, err
 	}
-	fmt.Println(response)
 	var mavResp mavenTableResponse
 	json.Unmarshal([]byte(response), &mavResp)
 	var tables []pokerapimodels.Table
